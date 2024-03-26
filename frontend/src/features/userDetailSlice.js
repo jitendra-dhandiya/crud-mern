@@ -43,7 +43,7 @@ export const fetchUserByIdAsync = createAsyncThunk(
 export const updateUserByIdAsync = createAsyncThunk(
   "user/updateUserById",
   async ({id,updatedData}) => {
-    const response = await fetch(`http://localhost:5000/api/user/update/${id}`,{
+    const response = await fetch(`https://crud-mern-api-self.vercel.app/api/user/update/${id}`,{
       method:'PUT',
       headers:{'Content-Type': 'application/json'},
       body:JSON.stringify(updatedData)
@@ -57,7 +57,7 @@ export const updateUserByIdAsync = createAsyncThunk(
 export const deleteUserByIdAsync = createAsyncThunk('users/deleteUserById',
 async(id,thunkAPI)=>{
   try {
-    const response = await fetch(`http://localhost:5000/api/user/delete/${id}`,{
+    const response = await fetch(`https://crud-mern-api-self.vercel.app/api/user/delete/${id}`,{
       method:'DELETE',
       headers:{'Content-Type': 'application/json'},
       body:JSON.stringify(thunkAPI)
