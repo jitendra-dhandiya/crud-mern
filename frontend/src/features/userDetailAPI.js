@@ -1,6 +1,6 @@
 export function createUserAPI(product) {
   return new Promise(async (resolve) => {
-    const response = await fetch("http://localhost:5000/api/user/create", {
+    const response = await fetch("https://crud-mern-api-self.vercel.app/api/user/create", {
       method: "POST",
       body: JSON.stringify(product),
       headers: { "content-type": "application/json" },
@@ -12,7 +12,7 @@ export function createUserAPI(product) {
 
 export function fetchUserAPI() {
   return new Promise(async (resolve) => {
-    const response = await fetch("http://localhost:5000/api/user/get");
+    const response = await fetch("https://crud-mern-api-self.vercel.app/api/user/get");
     const data = await response.json();
     resolve({ data });
   });
@@ -20,7 +20,7 @@ export function fetchUserAPI() {
 
 export function fetchUserById(id) {
   return new Promise(async (resolve) => {
-    const response = await fetch("http://localhost:5000/api/user/get/" + id);
+    const response = await fetch("https://crud-mern-api-self.vercel.app/api/user/get/" + id);
     const data = await response.json();
     resolve({ data });
     console.log("response",response)
@@ -31,7 +31,7 @@ export function fetchUserById(id) {
 
 export function deleteUserAPI(delet) {
   return new Promise(async (resolve) => {
-    const response = await fetch("http://localhost:5000/api/user/delete/"+delet.id, {
+    const response = await fetch("https://crud-mern-api-self.vercel.app/api/user/delete/"+delet.id, {
       method: "DELETE",
       body: JSON.stringify(delet),
       headers: { "content-type": "application/json" },
