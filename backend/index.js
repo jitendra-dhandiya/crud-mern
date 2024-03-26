@@ -6,7 +6,10 @@ import productRouter from "./routes/userRoute.js";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+  {
+}
+));
 app.disable("x-powered-by");
 
 app.use("/api/user", productRouter);
