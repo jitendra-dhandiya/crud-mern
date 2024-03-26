@@ -28,15 +28,3 @@ export function fetchUserById(id) {
 }
 
 
-
-export function deleteUserAPI(delet) {
-  return new Promise(async (resolve) => {
-    const response = await fetch("https://crud-mern-api-self.vercel.app/api/user/delete/"+delet.id, {
-      method: "DELETE",
-      body: JSON.stringify(delet),
-      headers: { "content-type": "application/json" },
-    })
-    const data = await response.json();
-    resolve({data})
-  });
-}
